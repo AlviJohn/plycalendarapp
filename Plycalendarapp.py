@@ -107,6 +107,8 @@ st.sidebar.image(image)
 fig = px.histogram(tyre_subset, x="RFPP CW", title='Distribution of RFPP for Calendar')
 st.plotly_chart(fig,use_container_width=True)
 
+st.write(tyre_subset["RFPP CW"].describe())
+
 
 
 # In[ ]:
@@ -145,4 +147,5 @@ st.plotly_chart(fig,use_container_width=True)
 if (calendar_make_choice[0] != 'ALL'):
     fig = px.histogram(tyre_subset, x="RFPP CW",facet_col = 'Cassette', title='Distribution of RFPP for Cassettes')
     st.plotly_chart(fig,use_container_width=True)
+
 
