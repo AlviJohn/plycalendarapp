@@ -1,0 +1,25 @@
+1.Keep all the files in a local folder
+
+2.Open Anaconda command prompt and type in your drive name and navigate to the folder location
+Commands(Example)
+a)E:
+b)cd E:\Projects\Uniformity_Final\Calendar Data\PlyCalendarApp\
+
+Make sure the depenencies are installed(needs to be done only once)
+Command: pip install -r requirements.txt
+
+
+3.Make Sure the file(Full_Data.xls) is kept in the directory and start streamlit server in anaconda
+Command:python -m streamlit run Plycalendarapp.py
+
+xlrd >= 1.0.0
+
+#####To Note##############
+
+
+
+Docker
+docker build . -t uniformity-docker -f Dockerfile.txt
+
+docker run -p 8501:8501 uniformity-docker:latest
+
