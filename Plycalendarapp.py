@@ -33,7 +33,7 @@ def read_input():
     Calendar_data= pd.read_csv('Calendar_data.csv')
     Calendar_data=pd.melt(Calendar_data, id_vars=['Calendar','Length Start', 'Length End'], 
              var_name='Width', value_name='Gauge')
-    tyre_data =tyre_data[['FT  Code','BARCODE','TUO M/C', 'TBM Machine','CT Press','RFPP CW','GT Date', 'Rejection Param','RFPP Rej','Calendar','Cassette']]
+    tyre_data =tyre_data[['BARCODE','RFPP CW','GT Date', 'Rejection Param','Calendar','Cassette']]
     ply_master =ply_master[['Area Produced', 'Material Code', 'Material ID', 'Carrier ID', 'Shift','DOM ', 'Quantity', 'UOM', 'Material Status', 'Calander Referance','Trial', 'Source']] 
     return tyre_data,ply_master,Calendar_data
 
