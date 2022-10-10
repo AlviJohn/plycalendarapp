@@ -107,7 +107,7 @@ st.sidebar.image(image)
 fig = px.histogram(tyre_subset, x="RFPP CW", title='Distribution of RFPP for Calendar')
 st.plotly_chart(fig,use_container_width=True)
 
-st.write(tyre_subset["RFPP CW"].describe())
+st.write(tyre_subset["RFPP CW"].describe().T)
 
 
 
