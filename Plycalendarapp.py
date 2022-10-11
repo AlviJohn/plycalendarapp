@@ -109,8 +109,8 @@ else:
 
 
 ###Filtering for specific Casette    
-gauge_subset = gauge_master[gauge_master['Calendar'].isin(calendar_make_choice_final)]
-tyre_subset = tyre_data_filtered[tyre_data_filtered['Calendar'].isin(calendar_make_choice_final)]
+gauge_subset = gauge_subset[gauge_subset['Calendar'].isin(calendar_make_choice_final)]
+tyre_subset = tyre_subset[tyre_subset['Calendar'].isin(calendar_make_choice_final)]
 tyre_subset=tyre_subset.sort_values(by='Cassette',ascending=False, axis=0)
 
 
