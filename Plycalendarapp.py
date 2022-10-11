@@ -98,7 +98,7 @@ tyre_subset=tyre_subset.sort_values(by='Cassette',ascending=False, axis=0)
 
 
 ####Selecting the calendar
-calendar_choices = tyre_data_filtered['Calendar'].unique().tolist()
+calendar_choices = tyre_subset['Calendar'].unique().tolist()
 calendar_choices_V2 =calendar_choices
 calendar_choices_V2.insert(0,"ALL")
 calendar_make_choice = st.sidebar.multiselect("Select one or more Calendar:",calendar_choices_V2,'ALL')
