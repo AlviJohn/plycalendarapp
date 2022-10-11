@@ -88,7 +88,7 @@ else:
 ply_master = ply_master[ply_master['Trial'].isin(trial_make_choice_final)]
 casette_list = ply_master['Calander Referance'].unique().tolist()
 
-gauge_subset = gauge_master[gauge_master['Trial'].isin(casette_list)]
+gauge_subset = gauge_master[gauge_master['Calendar'].isin(casette_list)]
 tyre_subset = tyre_data_filtered[tyre_data_filtered['Calendar'].isin(casette_list)]
 tyre_subset=tyre_subset.sort_values(by='Cassette',ascending=False, axis=0)
 
