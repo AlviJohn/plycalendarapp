@@ -70,6 +70,29 @@ if starting_date > ending_date:
 tyre_data_filtered = tyre_data[(tyre_data['GT Date'] >= start_date) & (tyre_data['GT Date'] <= end_date)]
 
 
+
+
+
+####Selecting the Trials
+trial_choices = gauge_master['Trial'].unique().tolist()
+trial_choices_V2 =trial_choices
+trial_choices_V2.insert(0,"ALL")
+trial_make_choice = st.sidebar.multiselect("Select one or more Trials:",trial_choices_V2,'ALL')
+if "ALL" in trial_make_choice:
+    trial_make_choice_final = trial_choices
+else:
+    trial_make_choice_final = trial_make_choice
+
+
+###Filtering for specific Casette    
+gauge_subset = gauge_master[gauge_master['Trial'].isin(trial_make_choice_final)]
+
+tyre_subset = tyre_data_filtered[tyre_data_filtered['Calendar'].isin(gauge_subset['Calendar'].unique().tolist())]
+tyre_subset=tyre_subset.sort_values(by='Cassette',ascending=False, axis=0)
+
+
+
+
 ####Selecting the calendar
 calendar_choices = tyre_data_filtered['Calendar'].unique().tolist()
 calendar_choices_V2 =calendar_choices
